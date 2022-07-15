@@ -17,7 +17,13 @@ module.exports = {
         res.status(200).send(sneakers);
         globalId++;
 
-    }
-    // buyshoe
-    // removefromcart
+    },
+    
+    deletebtn: (req,res) => {
+        let index = sneakers.findIndex(elem => elem.id === +req.params.id)
+        sneakers.splice(index, 1);
+        res.status(200).send(sneakers);
+    },
+
 }
+    
